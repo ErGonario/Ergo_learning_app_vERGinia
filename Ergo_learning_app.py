@@ -146,7 +146,7 @@ while True:
         print("\nAgain")
         score=score-1
     
-    if answer_1==auction_house:
+    if answer_5==auction_house:
         print("\nGood job! You are a real Eronaut, Let's go...")
         score=score+1
         break
