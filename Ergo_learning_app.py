@@ -25,7 +25,7 @@ asic_shitter="asic resistant, f?!#@ craazy tech"
 
 
 #Inizio programma
-print("Hi! this is an Ergo learning app. From now on, you're doomed! Ergo's STASI knows about you!"
+print("Hi! this is an Ergo learning app. From now on, you're doomed! Ergo's STASI knows about you!")
 print("\nWelcome to vERGinia Sir!!")
 print("\nIt's a big pleasure to meet you here!")
 print("\nWhat's your name fellow ergonaut?")
