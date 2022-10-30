@@ -21,7 +21,9 @@ score=int(score)
 VC="yes"
 gpu_resistant="gpu resistant"
 asic_shitter="asic resistant, f?!#@ craazy tech"
-
+sky_harbor="sky harbor"
+auction_house="auction house"
+amazon="amazon"
 
 
 #Inizio programma
