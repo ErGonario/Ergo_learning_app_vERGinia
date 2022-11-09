@@ -1,0 +1,992 @@
+ScreenManagement:
+    HomePage:
+    Presentation:
+    Q1:
+    I1:
+    Q2:
+    I2:
+    Q3:
+    I3:
+    Q4:
+    I4:
+    Q5:
+    I5:
+    Score:
+    FinalPage:
+
+
+<HomePage>:
+    name:'home'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos     
+    Label:
+        text:'Welcome to vERGinia    dear Ergonaut'
+        font_name: 'Fresco Stamp'
+        text_size: self.width, None
+        size_hint: 1, None
+        pos_hint: {"x":0.10, "y":0.80}
+        height: self.texture_size[1]
+        font_size:self.width/7.5
+        color: 0,0,0
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size        
+        
+    Button:
+        on_release:app.root.current = 'Instructions'
+        size_hint:0.7,0.45
+        pos_hint: {"x":0.15,"y":0.25}
+        background_normal:'ergo.png'
+        background_down:'Group145.png'
+    
+    Label:
+        text: "Let's test your Ergo skills!"
+        font_name: 'Fresco Stamp'
+        text_size: self.width, None
+        size_hint: 1, None
+        pos_hint: {"x":0.05, "y":0.10}
+        height: self.texture_size[1]
+        font_size:self.width/7
+        color: 0,0,0
+    Label:
+        text: "Smash that logo!"
+        font_name: 'Fresco Stamp'
+        text_size: self.width, None
+        size_hint: 1, None
+        pos_hint: {"x":0.25, "y":0.05}
+        height: self.texture_size[1]
+        font_size:self.width/10
+        color: 0,0,0    
+                
+<Presentation>:
+    name:'Instructions'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    
+    BoxLayout:
+        orientation:'vertical'
+    
+        
+        
+        AnchorLayout:
+            anchor_y:'top'
+            BoxLayout:    
+       
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "vERGinia, it's a small island of the Sigmaverse, it's the best place to learn about Ergo!"
+                    font_name: 'Fresco Stamp'
+                    text_size: self.width, None
+                    
+                    halign: 'center'
+                    size_hint:0.10, 0.45
+                    height: self.texture_size[1]
+                    font_size:30
+                    color: 0,0,0
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size
+
+        AnchorLayout:
+            anchor_y:'center'
+            anchor_x:'center'
+            BoxLayout:
+                
+                Button:
+                    on_release:app.root.current = 'q1'
+                    size_hint:0.45,0.45
+                    pos_hint: {"x":0.25, "y":0.25}
+                    background_normal:'Isolation_Mode.png'
+                    background_down:'Group145.png'
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    font_name: 'Fresco Stamp'
+                    text: "The path to become a real Sigmanaut"
+                    text_size: self.width, None
+                    pos_hint: {"x":0.05, "y":0.05}
+                    size_hint:0.5, None
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0   
+        AnchorLayout:
+            anchor_y:'bottom'
+            anchor_x:'right'
+            BoxLayout:
+                             
+                
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    font_name: 'Fresco Stamp'
+                    text: "From now on you're doomed! Ergo's STASI knows about you! You need to catch up!"
+                    text_size: self.width, None
+                    halign:'center'
+                    size_hint:0.5, None
+                    height: self.texture_size[1]
+                    font_size:30
+                    color: 0,0,0
+                    
+                    
+         
+          
+
+<Q1>:
+    name:'q1'
+    background_color:(255/255, 102/255, 255/255, 1)
+    font_name: 'Fresco Stamp'
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            background_color:(255/255, 102/255, 255/255, 1)
+            text:'1. What type of blockchain is Ergo?'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, None
+            height: self.texture_size[1]
+            font_size:self.width/15
+            color: 0,0,0
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+        Button:
+            text: 'a. Layer 1'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_press:self.background_color = (0,255,0)
+            on_release:app.root.current = 'q2'
+        Button:
+            text: 'b. Layer 2'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        
+        AnchorLayout:
+            anchor_y:'bottom'
+            BoxLayout:
+                Button:
+                    on_press:self.background_color = (0,255,0)
+                    on_release:app.root.current = 'instructions1'
+                    text: "Cheat"
+                    font_name: 'Fresco Stamp'
+                    font_size: 25
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+                Button:
+                    text: "Next"
+                    font_name: 'Fresco Stamp'
+                    font_size: 32
+                    on_release:app.root.current = 'q2'
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+<I1>:
+    name:'instructions1'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Instruction nummer 1"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:40
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Ergo is a L1 next-generation smart contract platform that enables anyone to participate in the digital DeFi revolution now. "
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:40
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        AnchorLayout:
+            anchor_y:'center'    
+            BoxLayout:
+        
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "Ensuring economic freedom for ordinary people through decentralized, private and secure financial tools."
+                    font_name: 'Fresco Stamp'
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size              
+                    
+            
+        AnchorLayout:
+            anchor_y:'bottom'
+            anchor_x:'center'    
+            BoxLayout:   
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "from: https://docs.ergoplatform.com/"
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:15
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size    
+        AnchorLayout:
+            anchor_y:'bottom'
+            anchor_x:'center'    
+            BoxLayout:
+                Button:
+                    on_release:app.root.current = 'q1'
+                    size_hint:0.7,0.45
+                    pos_hint: {"x":0.35, "y":0.01}
+                    text: 'Go back'
+                    font_name: 'Fresco Stamp'     
+    
+<Q2>:
+    name:'q2'
+    
+    canvas.before:
+        Color:
+            rgba:(255/255, 102/255, 255/255, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            background_color:(255/255, 102/255, 255/255, 1)
+            text:'2. Is Ergo a PoW or a PoS blockchain?'
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, None
+            height: self.texture_size[1]
+            font_size:self.width/15
+            color: 0,0,0
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+        Button:
+            text: "a. PoW"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_press:self.background_color = (0,255,0)
+            on_release:app.root.current = 'q3'
+        Button:
+            text: 'b. PoS'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: "c. Surely can't be both"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        
+        AnchorLayout:
+            anchor_y:'bottom'
+            BoxLayout:
+                Button:
+                    on_press:self.background_color = (0,255,0)
+                    on_release:app.root.current = 'instructions2'
+                    text: "Cheating again"
+                    font_size: 25
+                    font_name: 'Fresco Stamp'
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+                Button:
+                    text: "Next"
+                    font_name: 'Fresco Stamp'
+                    font_size: 32
+                    on_release:app.root.current = 'q3'
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    
+<I2>:
+    name:'instructions2'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Instruction number 2"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:35
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Ergo is a PoW blockchain designed to be more energy efficient than Bitcoin. But, how much efficiency is enough? Some features, like the eUTXO model, can work with a variety of consensus mechanisms, including PoW and PoS. "
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:20
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        AnchorLayout:
+            anchor_y:'center'    
+            BoxLayout:
+        
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "Ensuring economic freedom for ordinary people through decentralized, private and secure financial tools."
+                    text_size: self.width, None
+                    font_name: 'Fresco Stamp'
+                    size_hint: 1, 1
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size              
+                    
+        AnchorLayout:
+            anchor_y:'bottom'
+            anchor_x:'center'    
+            BoxLayout:   
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "from: https://ergoplatform.org/en/blog/2022-03-29-proof-of-work-energy-and-ergo/"
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size     
+        AnchorLayout:
+            anchor_y:'bottom'    
+            BoxLayout:   
+                
+                Button:
+                    on_release:app.root.current = 'q2'
+                    size_hint:0.7,0.45
+                    pos_hint: {"x":0.35, "y":0.01}
+                    text: 'Go back'     
+                    font_name: 'Fresco Stamp'
+
+<Q3>:
+    name:'q3'
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            background_color:(255/255, 102/255, 255/255, 1)
+            text:"3. What's a key point of Autolikos2 algorithm?"
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, None
+            height: self.texture_size[1]
+            font_size:self.width/15
+            color: 0,0,0
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text_size: self.width, None
+            
+        Button:
+            text: "a. It's a cool name"
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'b. ASIC mineable'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'c. GPU resistant'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'd. ASICs resistant'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_press:self.background_color = (0,255,0)
+            on_release:self.color = (0,0,0)
+            on_release:app.root.current = 'q4'
+        AnchorLayout:
+            anchor_y:'bottom'
+            BoxLayout:
+                Button:
+                    on_press:self.background_color = (0,255,0)
+                    on_release:app.root.current = 'instructions3'
+                    text: "Come on man"
+                    font_size: 25
+                    font_name: 'Fresco Stamp'
+                    color: 0,0,0
+                    background_color:(102/255, 0/255, 51/255, 1)
+                Button:
+                    text: "Next"
+                    font_size: 32
+                    font_name: 'Fresco Stamp'
+                    on_release:app.root.current = 'q4'
+                    color: 0,0,0
+                    background_color:(102/255, 0/255, 51/255, 1)       
+<I3>:
+    name:'instructions3'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Instruction number 3"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:35
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Ergo mining is based on Autolykos, an ASIC resistant Proof of Work algorithm written in Scala that runs cool and increases mining equipment longevity. Combined with the eUTXO model, this creates a highly efficient Proof of Work"
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:20
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        AnchorLayout:
+            anchor_y:'center'    
+            BoxLayout:
+        
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "Ensuring economic freedom for ordinary people through decentralized, private and secure financial tools."
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    font_name: 'Fresco Stamp'
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size              
+                    
+        AnchorLayout:
+            anchor_y:'bottom'
+            anchor_x:'center'    
+            BoxLayout:   
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "from: https://docs.ergoplatform.com/mining/"
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size    
+        AnchorLayout:
+            anchor_y:'bottom'    
+            BoxLayout:   
+                
+                Button:
+                    on_release:app.root.current = 'q3'
+                    size_hint:0.7,0.45
+                    font_name: 'Fresco Stamp'
+                    pos_hint: {"x":0.35, "y":0.01}
+                    text: 'Go back'     
+<Q4>:
+    name:'q4'
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text:"4. What's the first NFTs market on Ergo?"
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, None
+            height: self.texture_size[1]
+            font_size:self.width/15
+            color: 0,0,0
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+        Button:
+            text: 'b. Rarible'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'a. Auction House'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (0,255,0)
+            on_release:self.color = (0,0,0)
+            on_release:app.root.current = 'q5'
+        Button:
+            text: 'c. Sky Harbor'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'd. E-Nfts'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        AnchorLayout:
+            anchor_y:'bottom'
+            BoxLayout:
+                Button:
+                    on_press:self.background_color = (0,255,0)
+                    on_release:app.root.current = 'instructions4'
+                    text: "Really??"
+                    font_name: 'Fresco Stamp'
+                    font_size: 25
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+                Button:
+                    text: "Next"
+                    font_name: 'Fresco Stamp'
+                    font_size: 32
+                    on_release:app.root.current = 'q5'
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+<I4>:
+    name:'instructions4'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Instruction number 4"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:35
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Ergo is a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas laoreet congue nisl eu dapibus. Nunc congue eget elit in blandit. In mollis arcu quis blandit eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam in enim ut nisi congue dapibus ut non ligula. Proin sollicitudin pharetra venenatis. In non diam a lacus rutrum iaculis. Pellentesque in tempus dui, vitae volutpat leo."
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:20
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        AnchorLayout:
+            anchor_y:'center'    
+            BoxLayout:
+        
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "History it's very important. Here you must know it!"
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    font_name: 'Fresco Stamp'
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size              
+                    
+            
+        AnchorLayout:
+            anchor_y:'bottom'    
+            BoxLayout:   
+                
+                Button:
+                    on_release:app.root.current = 'q4'
+                    size_hint:0.7,0.45
+                    font_name: 'Fresco Stamp'
+                    pos_hint: {"x":0.35, "y":0.01}
+                    text: 'Go back'             
+<Q5>:
+    name:'q5'
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text:"5. What can be made with NiPoPows?"
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, None
+            height: self.texture_size[1]
+            font_size:self.width/15
+            color: 0,0,0
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+        Button:
+            text: 'a. Ensure connectivity'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'b. Enable light nodes'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (0,255,0)
+            on_release:self.color = (0,0,0)
+            on_release:app.root.current = 'score'
+        Button:
+            text: 'c. Disable transactions'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        Button:
+            text: 'd. Verify transactions'
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            font_size:self.width/15
+            background_color:(255/255, 102/255, 255/255, 1)
+            color: (0,0,0)
+            on_release:self.background_color = (255,0,0)
+        AnchorLayout:
+            anchor_y:'bottom'
+            BoxLayout:
+                Button:
+                    on_press:self.background_color = (0,255,0)
+                    on_release:app.root.current = 'instructions5'
+                    text: "Cheater"
+                    font_name: 'Fresco Stamp'
+                    font_size: 25
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+                Button:
+                    text: "Next"
+                    font_name: 'Fresco Stamp'
+                    font_size: 32
+                    on_release:app.root.current = 'score'
+                    color: 204,0,102
+                    background_color:(102/255, 0/255, 51/255, 1)
+<I5>:
+    name:'instructions5'
+    background_color:(102/255, 0/255, 51/255, 1)
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos   
+    
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "Instruction number 5"
+            font_name: 'Fresco Stamp'
+            text_size: self.width, None
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:35
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        
+        Label:
+            background_color:(102/255, 0/255, 51/255, 1)
+            text: "NIPoPoWs, or Non-interactive Proof-of-Proof-of-Work. These are short stand-alone strings that a computer program can inspect to verify that an event happened on a proof-of-work-based blockchain without connecting to the blockchain network and downloading all block headers. For example, these proofs can illustrate that a cryptocurrency payment was made"
+            text_size: self.width, None
+            font_name: 'Fresco Stamp'
+            size_hint: 1, 1
+            pos_hint: {"x":0.01, "y":0.01}
+            height: self.texture_size[1]
+            font_size:20
+            color: 0,0,0
+            size: self.size
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+        AnchorLayout:
+            anchor_y:'center'    
+            BoxLayout:
+        
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "Ensuring economic freedom for ordinary people through decentralized, private and secure financial tools."
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    font_name: 'Fresco Stamp'
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size              
+                    
+        AnchorLayout:
+            anchor_y:'bottom'
+            anchor_x:'center'    
+            BoxLayout:   
+                Label:
+                    background_color:(102/255, 0/255, 51/255, 1)
+                    text: "from: https://docs.ergoplatform.com/dev/protocol/nipopows/"
+                    text_size: self.width, None
+                    size_hint: 1, 1
+                    pos_hint: {"x":0.01, "y":0.10}
+                    height: self.texture_size[1]
+                    font_size:20
+                    color: 0,0,0
+                    size: self.size
+                    canvas.before:
+                        Color:
+                            rgba: self.background_color
+                        Rectangle:
+                            size: self.size      
+        AnchorLayout:
+            anchor_y:'bottom'    
+            BoxLayout:   
+                
+                Button:
+                    on_release:app.root.current = 'q5'
+                    size_hint:0.7,0.45
+                    pos_hint: {"x":0.35, "y":0.01}
+                    text: 'Go back'     
+                    font_name: 'Fresco Stamp'
+
+
+<Score>:
+    name:'score'
+    canvas.before:
+        Rectangle:
+            size:self.size
+            source: ''
+
+    FloatLayout:
+        background_color:(102/255, 0/255, 51/255, 1)
+        Label:
+            text: "No score guys, sorry!"
+        Button:
+            size_hint:0.4,0.15
+            pos_hint: {"x":0.03,"y":0.025} 
+            on_release:app.root.current = 'final'
+            text: 'Go!'
+            font_name: 'Fresco Stamp'
+
+
+<FinalPage>:
+    name:'final'
+    canvas.before:
+        Rectangle:
+            size:self.size
+            source: 'Group145.png'
+
+    FloatLayout:
+        Button:
+            size_hint:0.4,0.15
+            pos_hint: {"x":0.03,"y":0.025} 
+            on_release:app.root.current = 'q1'
+            text: 'Go back'
+            font_name: 'Fresco Stamp'
+            
+        Button:
+            size_hint:0.4,0.15
+            pos_hint: {"x":0.55,"y":0.025}
+            on_release:app.root.current = 'home'
+            text:'home'
+            font_name: 'Fresco Stamp'
